@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNYF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ulv1woj.css">
+    <style>
+        body {
+       
+       min-height: 100vh;
+       margin: 0;
+       max-width: 100%;
+       width: 100%;
+       text-align: center;
+   }
+
+   .project-section {
+margin: 6%;
+/* max-width: 696px; */
+/* width: 58%; */
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-content: center;
+}
+
+.image-grid {
+  padding: 10px;
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+   .image-grid img {
+       width: 100%;
+       max-width: 100%;
+       height: auto;
+       border-radius: 8px;
+       overflow: hidden;
+   }
+
+  
+.smaller-inspiration {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(356px, 1fr));
+gap: 30px;
+margin-top: 45px;
+background-color: #f8f8f8;
+border-radius: 0;
+overflow: hidden;
+padding: 74px;
+}
+.smaller-inspiration img {
+width: 106%;
+/* max-width: 100%; */
+height: auto;
+border-radius: 8px;
+overflow: hidden;
+}
+h3 {
+padding-top: 10%;
+text-align: center;
+}
+header p {
+text-align: center;
+}
+p {
+margin-right: 10%;
+margin-left: 10%;
+/* padding: 30%; */
+/* width: 39%; */
+text-align: left;
+}
+@media (max-width: 768px) {
+    .smaller-inspiration {
+        grid-template-columns:auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="nav-home"><a href="HomePage.html">Home</a></li>
+            <li><a href="demo-reel-breakdown.html">Demo Reel</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+   
+
+    <div class="project-section">
+        <header>
+            <h1>Lunar New Year Festival 2023: Radiance</h1>
+            <p>LNYF is an annual student-run production at Washington University in St. Louis. The Washington University Animation Association collaborated with LNYF to introduce their new theme, Radiance. <a href="https://lnyf.wustl.edu/" target="_blank">Explore Radiance</a>.</p>
+
+        </header>
+        <iframe src="img/LNYF/LNYF.mp4" frameborder="0" allowfullscreen class="process-video" autoplay="false"></iframe>
+      
+        <h3> Rough Animations
+        </h3>
+        <p>During the summer of 2023, I played a crucial role as a rough animator in a collaborative project with the Washington University Animation Association. 
+Working as part of a team, we faced the challenges of tight deadlines and the need for effective communication. Coordinating with fellow animators, we aimed to ensure the initial timing of the animations was precise, contributing to the overall cohesiveness of the 2D animation sequences. One of my primary responsibilities was the animation of the baby dragon.
+    Emphasizing teamwork, we navigated through feedback and critiques, refining our animations to meet the high standards set for the LNYF production. This collaborative effort not only honed our animation skills but also strengthened our ability to work collectively under pressure and deliver a compelling visual experience for the audience.</p>
+            <div class="smaller-inspiration">
+        
+        <iframe src="img/LNYF/number1.mp4" frameborder="0" allowfullscreen class="process-video" autoplay="false"></iframe>
+        <iframe src="img/LNYF/Second_Test_012.mp4" frameborder="0" allowfullscreen class="process-video" autoplay="false"></iframe>
+    </div>
+</div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <a href="https://www.linkedin.com/in/jovonka-johnson/" class="footer-link">LinkedIn</a>
+                <a href="resume.html" class="footer-link">Resume</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="" alt="Enlarged Image" id="enlargedImg" class="modal-content">
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const modal = document.getElementById("imageModal");
+          const modalImg = document.getElementById("enlargedImg");
+          const closeBtn = document.getElementsByClassName("close")[0];
+      
+          function openModal(src) {
+              modal.style.display = "block";
+              modalImg.src = src;
+          }
+      
+          function closeModal() {
+              modal.style.display = "none";
+          }
+      
+          // Function to handle click on images
+          function handleImageClick(event) {
+              const clickedImage = event.target;
+              const src = clickedImage.getAttribute("src");
+              openModal(src);
+          }
+      
+          // Attach click event to all images in the project section
+          const allImages = document.querySelectorAll(".image-grid img, .smaller-inspiration img");
+          allImages.forEach((image) => {
+              image.addEventListener("click", handleImageClick);
+          });
+      
+          // Close modal when close button is clicked
+          closeBtn.onclick = closeModal;
+      
+          // Close modal when clicking outside the modal content
+          window.onclick = function (event) {
+              if (event.target === modal) {
+                  closeModal();
+              }
+          };
+      });
+      </script>
+      </body>
+
+</html>
