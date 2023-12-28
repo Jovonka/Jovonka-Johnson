@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ulv1woj.css">
+    <style>
+        body {
+       
+       min-height: 100vh;
+       margin: 0;
+       max-width: 100%;
+       width: 100%;
+       text-align: center;
+   }
+
+   .project-section {
+    margin: 6%;
+    /* max-width: 696px; */
+    /* width: 58%; */
+    /* display: flex; */
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.image-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+   .image-grid img {
+       width: 100%;
+       max-width: 100%;
+       height: auto;
+       border-radius: 8px;
+       overflow: hidden;
+   }
+
+  
+   .smaller-inspiration {
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+    gap: 30px;
+    margin-top: 45px;
+    background-color: #f8f8f8;
+    border-radius: 0;
+    overflow: hidden;
+    padding: 74px;
+}
+.smaller-inspiration img {
+width: 106%;
+/* max-width: 100%; */
+height: auto;
+border-radius: 8px;
+overflow: hidden;
+}
+h3 {
+padding-top: 10%;
+text-align: center;
+}
+header p {
+text-align: center;
+}
+p {
+margin-right: 10%;
+margin-left: 10%;
+/* padding: 30%; */
+/* width: 39%; */
+text-align: left;
+}
+iframe {
+    width: 59%;
+}
+</style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="nav-home"><a href="HomePage.html">Home</a></li>
+            <li><a href="demo-reel-breakdown.html">Demo Reel</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+   
+
+    <div class="project-section">
+        <header>
+            <h1>Star Quest</h1>
+            <p>Star Quest involved prototyping and designing in Figma, 3D modeling and rigging in Maya, texturing in Substance Painter, rendering with Arnold, and Unreal Engine 5 for VFX animations. Credit for star information: <a href="https://universe.nasa.gov/stars/types/" target="_blank">NASA - Star Types</a></p>
+      
+        </header>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FomsTlfjUz9fkHJrCIOjyYp%2FSite-App%3Fpage-id%3D13%253A2%26type%3Ddesign%26node-id%3D58-1126%26viewport%3D-2949%252C3621%252C0.43%26t%3DfGqhhODHWELbCTOI-1%26scaling%3Dscale-down%26starting-point-node-id%3D63%253A1426%26mode%3Ddesign" allowfullscreen></iframe>
+        <h3>Brown Dwarf Star VFX and Unreal Engine blueprint
+        </h3>
+        <p>Brown dwarfs aren’t technically stars. They’re more massive than planets but not quite as massive as stars. Generally, they have between 13 and 80 times the mass of Jupiter. They emit almost no visible light.</p>
+        <p>Unreal Engine Blueprint for Brown Dwarfs emphasizes the unique nature of these objects. VFX materials capture the dim, infrared-emitting features of brown dwarfs.</p>
+            <div class="image-grid">       
+
+<img src="img/Star/brown/brown1.gif" alt="">
+<img src="img/Star/browndwarf.webp" alt="">
+<img src="img/Star/brown/Capture.PNG" alt="">
+            </div>
+            <h3>Main Sequence Star VFX and Unreal Engine blueprint
+            </h3>
+            <p>Main sequence stars form from a clump of dust and gas in a stellar nursery. Over hundreds of thousands of years, the clump gains mass, starts to spin, and heats up. When the core heats up to millions of degrees, nuclear fusion starts, creating a main sequence star. These stars make up around 90% of the universe’s stellar population and can live for millions to billions of years.</p>
+        <p>For the Unreal Engine Blueprint, a dynamic material system is employed to simulate the changing luminosity and color of Main Sequence Stars. VFX materials mimic the fusion processes occurring in the star's core.</p>
+           <div class="image-grid">
+
+<img src="img/Star/mainsequence/mainstar1.gif" alt="">
+<img src="img/Star/Main.jpg" alt="">
+<img src="img/Star/mainsequence/1.PNG" alt="">
+<img src="img/Star/mainsequence/3.PNG" alt="">
+</div>
+<h3>Neutron Star VFX and Unreal Engine blueprint
+</h3>
+<p>Neutron stars are stellar remnants that pack more mass than the Sun into a sphere about as wide as Manhattan Island. They form when a main sequence star with between about eight and 20 times the Sun’s mass runs out of hydrogen in its core and undergoes a supernova explosion.</p>
+<p>Unreal Engine Blueprint for Neutron Stars emphasizes rapid rotation and pulsar effects. VFX materials showcase the intense magnetic fields and energetic processes happening on the surface of a neutron star.</p>
+<div class="image-grid">
+
+<img src="img/Star/NeutronStars/Neutron1.gif" alt="">
+<img src="img/Star/Neutron.jpg" alt="">
+<img src="img/Star/NeutronStars/2.PNG" alt="">
+<img src="img/Star/NeutronStars/Capture.PNG" alt="">
+    </div>
+    <h3>Red Dwarf Star VFX and Unreal Engine blueprint
+    </h3>
+    <p>Red dwarfs are the smallest main sequence stars, just a fraction of the Sun’s size and mass. They steadily burn through their entire supply of hydrogen over trillions of years and make up around 75% of the Milky Way galaxy’s stellar population.</p>
+    <p>Unreal Engine Blueprint for Red Dwarfs incorporates slow, steady burning effects with a focus on long-term stability. VFX materials highlight the distinct characteristics and longevity of red dwarfs.</p>
+          <div class="image-grid">
+
+<img src="img/Star/RedDwarfs/reddarf1.gif" alt="">
+<img src="img/Star/reddwarf.jpg" alt="">
+<img src="img/Star/RedDwarfs/1.PNG" alt="">
+<img src="img/Star/RedDwarfs/3.PNG" alt="">
+</div>
+<h3>Red Giant Star VFX and Unreal Engine blueprint
+</h3>
+<p>When a main sequence star less than eight times the Sun’s mass runs out of hydrogen in its core, it becomes a red giant. The red giant eventually becomes unstable and begins pulsating, periodically expanding and ejecting some of its atmosphere, creating a planetary nebula.</p>
+<p>The Unreal Engine Blueprint for Red Giants includes dynamic scaling and pulsating effects to simulate the expansion and contraction of the star. VFX materials recreate the vibrant colors and turbulent processes happening in the outer layers of a red giant.</p>
+  <div class="image-grid">
+
+<img src="img/Star/RedGiants/RedGiant1.gif" alt="">
+<img src="img/Star/Redgiant.jpg" alt="">
+<img src="img/Star/RedGiants/Capture.PNG" alt="">
+</div>
+<h3>White Dwarf Star VFX and Unreal Engine blueprint
+</h3>
+<p>After a red giant sheds all its atmosphere, only the core remains, forming a white dwarf. Despite the name, white dwarfs can emit visible light that ranges from blue white to red. The Sun will become a white dwarf in about 5 billion years.</p>
+        <p>Unreal Engine Blueprint for White Dwarfs focuses on creating a compact, dense core with cooling effects over billions of years. VFX materials bring out the subtle color variations and the aging process of a white dwarf.</p>
+            <div class="image-grid">
+
+<img src="img/Star/WhiteDwarf/whiteD1.gif" alt="">
+<img src="img/Star/WhiteDwarf.webp" alt="">
+<img src="img/Star/WhiteDwarf/Capture.PNG" alt="">
+    </div>
+    <h3>Spaceman Wireframe
+    </h3>
+    <p>The spaceman's minimalist design allows for easy navigation and seamless integration into the overall user experience. The emphasis on simplicity aims to enhance user engagement, ensuring that the character serves its purpose as a helpful guide.</p>
+    <div class="smaller-inspiration">
+            <iframe src="img/Star/spaceman.mp4" frameborder="0" allowfullscreen class="process-video" autoplay="false"></iframe>
+</div>
+</div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <a href="https://www.linkedin.com/in/jovonka-johnson/" class="footer-link">LinkedIn</a>
+                <a href="resume.html" class="footer-link">Resume</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="" alt="Enlarged Image" id="enlargedImg" class="modal-content">
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const modal = document.getElementById("imageModal");
+          const modalImg = document.getElementById("enlargedImg");
+          const closeBtn = document.getElementsByClassName("close")[0];
+      
+          function openModal(src) {
+              modal.style.display = "block";
+              modalImg.src = src;
+          }
+      
+          function closeModal() {
+              modal.style.display = "none";
+          }
+      
+          // Function to handle click on images
+          function handleImageClick(event) {
+              const clickedImage = event.target;
+              const src = clickedImage.getAttribute("src");
+              openModal(src);
+          }
+      
+          // Attach click event to all images in the project section
+          const allImages = document.querySelectorAll(".image-grid img, .smaller-inspiration img");
+          allImages.forEach((image) => {
+              image.addEventListener("click", handleImageClick);
+          });
+      
+          // Close modal when close button is clicked
+          closeBtn.onclick = closeModal;
+      
+          // Close modal when clicking outside the modal content
+          window.onclick = function (event) {
+              if (event.target === modal) {
+                  closeModal();
+              }
+          };
+      });
+      </script>
+      </body>
+
+</html>

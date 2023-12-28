@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ulv1woj.css">
+ 
+ 
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            overflow-y: scroll;
+           
+        }
+
+        header {
+            text-align: left;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            z-index: 2;
+        }
+        .floating-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            z-index: 2;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+
+       
+
+        .projects-section {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        h3 {
+            padding-top: 5%;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+           
+            justify-content: center;
+            padding-bottom: 10%;
+        }
+
+        .project-item,
+        .illustration-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .project-image,
+        .illustration-image {
+            width: 100%;
+            height: auto;
+        }
+
+       
+
+        .project-item .project-details {
+            opacity: 1;
+        }
+
+        .project-details p {
+            margin: 5px 0;
+        }
+
+      
+
+       
+
+        .illustration-carousel {
+            width: 70%;
+            margin: 30px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .illustration-gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .illustration-item {
+            min-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .illustration-image {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #000;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            transition: color 0.3s, box-shadow 0.3s;
+        }
+
+        .carousel-arrow:hover {
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .slick-prev {
+            left: 0;
+        }
+
+        .slick-next {
+            right: 0;
+        }
+
+        
+
+        .floating-nav.show {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(0);
+        }
+
+        .floating-nav.show a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .illustration-section h2,
+        .drawing-section h2 {
+            color: #fff; /* White text color */
+        }
+        .drawing-gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .drawing-item {
+            min-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .drawing-image {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+
+        .drawing-slick-prev,
+        .drawing-slick-next {
+            display: none;
+        }
+
+        .drawing-carousel:hover .carousel-arrow {
+            display: block;
+        }
+        .whiteh2 h2 {
+            color:#f8f8f8;
+        }
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto; /* Center the modal content horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+
+
+
+
+
+
+        
+            @media (max-width: 768px) 
+        {
+  
+    .project-grid {
+     
+      grid-template-columns: repeat(1, 1fr);
+    }
+        }
+        
+        .projects-section {
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    flex-direction: column;
+    position: relative;
+}
+
+.project-grid,
+.illustration-carousel,
+.drawing-carousel {
+    width: 70%; /* Adjust the width as needed */
+    max-width: 1200px; /* Add a maximum width if needed */
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="nav-home"><a href="HomePage.html">Home</a></li>
+            <li><a href="demo-reel-breakdown.html">Demo Reel</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+    <h1>Projects</h1>
+</header>
+    <div class="projects-section" style="background-color:  #f8f8f8;"> <!-- 3D Art section color -->
+        <h2>3D Art</h2>
+        <div class="project-grid">
+
+            <a href="CamperVan.html" class="project-item">
+                <img src="img/van.gif" alt="Project 1" class="project-image">
+                <div class="project-details">
+                    <h2>Camper Van</h2>
+                    <p>Maya | Substance Painter | Unreal Engine 5</p>
+                </div>
+            </a>
+
+            <a href="DeliveryFrog.html" class="project-item">
+                <img src="img/Frog.jpg" alt="Project 2" class="project-image">
+                <div class="project-details">
+                    <h2>Delivery Frog</h2>
+                    <p>Maya | Substance Painter | Arnold</p>
+                </div>
+            </a>
+            <!-- Project 3 -->
+            <a href="Remote.html" class="project-item">
+                <img src="img/animation.gif" alt="Project 3" class="project-image">
+                <div class="project-details">
+                    <h2>Remote</h2>
+                    <p>Maya | Substance Painter | Arnold</p>
+                </div>
+            </a>
+            <!-- Project 4 -->
+            <a href="NewYorkBuildings.html" class="project-item">
+                <img src="img/buidings2.jpg" alt="Project 4" class="project-image">
+                <div class="project-details">
+                    <h2>New York Buildings</h2>
+                    <p>Maya | Substance Painter | Arnold</p>
+                </div>
+            </a>
+            <!-- Project 5 -->
+            <a href="RusticReverie.html" class="project-item">
+                <img src="img/househouse-2.gif" alt="Project 5" class="project-image">
+                <div class="project-details">
+                    <h2>Rustic Reverie</h2>
+                    <p>Maya | Python | Substance Painter | Arnold</p>
+                </div>
+            </a>
+            <!-- Project 6 -->
+            <a href="StarQuest.html" class="project-item">
+                <img src="img/Spacething.jpg" alt="Project 6" class="project-image">
+                <div class="project-details">
+                    <h2>Star Quest</h2>
+                    <p>Figma | Maya | Unreal Engine 5 | Arnold</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="projects-section" style="background-color: #d0cece;"> <!-- 2D Animation section color -->
+        <h2>2D Animation</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <a href="LNYF.html" class="project-item">
+                <img src="img/Dragon.gif" alt="Project 1" class="project-image">
+                <div class="project-details">
+                    <h2>Lunar New Year Festival 2023: Radiance</h2>
+                    <p>2D animation made by Washington University Animation Association. Responsible for rough animation and timing.</p>
+                </div>
+            </a>
+            <!-- Project 2 -->
+            <a href="Pluto.html" class="project-item">
+                <img src="img/pluto.JPG" alt="Project 2" class="project-image">
+                <div class="project-details">
+                    <h2>Pluto's Booty</h2>
+                    <p>A short animatic made for a final project in Word and Image 2, a studio offered at Washington University in St. Louis.</p>
+                </div>
+            </a>
+            <!-- Project 3 -->
+            <a href="Keep.html" class="project-item">
+                <img src="img/Keep.gif" alt="Project 3" class="project-image">
+                <div class="project-details">
+                    <h2>Keep</h2>
+                    <p>A pixel animation made in Time Based Media, a studio offered at Washington University in St. Louis.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="projects-section" style="background-color: #403941;"> <!-- Illustration section color -->
+       <div class="whiteh2">
+        <h2>Illustrations</h2>
+    </div>
+        <div class="illustration-carousel">
+            <!-- Illustration Gallery -->
+            <div class="illustration-gallery">
+                <!-- Illustration Project 1 -->
+                <div class="illustration-item">
+                    <img src="img/Nature.png" alt="Illustration 1" class="illustration-image">
+                    
+                       
+                </div>
+                <!-- Illustration Project 2 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /JapanC1.jpg" alt="Illustration 2" class="illustration-image">
+                   
+                </div>
+                <!-- Illustration Project 3 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /JapanC2.jpg" alt="Illustration 3" class="illustration-image">
+                   
+                       
+                </div>
+                <!-- Illustration Project 4 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /JapanC3.jpg" alt="Illustration 4" class="illustration-image">
+                   
+                     
+                </div>
+                <!-- Illustration Project 5 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /3little.jpg" alt="Illustration 5" class="illustration-image">
+                    
+                </div>
+                <!-- Illustration Project 6 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /Boba.jpg" alt="Illustration 6" class="illustration-image">
+                    
+                </div>
+                <!-- Illustration Project 7 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /cat.jpg" alt="Illustration 7" class="illustration-image">
+                   
+                </div>
+                <!-- Illustration Project 8 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /halle.jpg" alt="Illustration 8" class="illustration-image">
+                   
+                </div>
+                <!-- Illustration Project 9 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /hungry.jpg" alt="Illustration 9" class="illustration-image">
+                    
+                </div>
+                <!-- Illustration Project 10 -->
+                <div class="illustration-item">
+                    <img src="img/illustrations /magic.jpg" alt="Illustration 10" class="illustration-image">
+                    
+                </div>
+            </div>
+            <!-- Add arrow buttons -->
+            <div class="carousel-arrow slick-prev" onclick="prevSlide()">&#8592;</div>
+            <div class="carousel-arrow slick-next" onclick="nextSlide()">&#8594;</div>
+        </div>
+    </div>
+
+    <div class="projects-section" style="background-color: #181818;"> <!-- Drawing section color -->
+        <div class="whiteh2">
+        <h2>Drawings</h2>
+    </div>
+        <div class="illustration-carousel drawing-carousel">
+           
+            <div class="illustration-gallery drawing-gallery"> 
+                
+                <div class="drawing-item">
+                    <img src="img/Drawings/1.png" alt="Illustration 1" class="illustration-image">
+                  
+                </div>
+        
+                <div class="drawing-item">
+                    <img src="img/Drawings/2.png" alt="Illustration 2" class="illustration-image">
+                   
+                </div>
+              
+                <div class="drawing-item">
+                    <img src="img/Drawings/3.png" alt="Illustration 3" class="illustration-image">
+                    
+                </div>
+                
+                <div class="drawing-item">
+                    <img src="img/Drawings/4.png" alt="Illustration 4" class="illustration-image">
+                    
+                </div>
+                
+                <div class="drawing-item">
+                    <img src="img/Drawings/5.png" alt="Illustration 5" class="illustration-image">
+                    
+                </div>
+      
+                <div class="drawing-item">
+                    <img src="img/Drawings/6.png" alt="Illustration 6" class="illustration-image">
+                  
+                </div>
+                
+                <div class="drawing-item">
+                    <img src="img/Drawings/7.png" alt="Illustration 7" class="illustration-image">
+                   
+                </div>
+            </div>
+            <!-- Add arrow buttons -->
+            <div class="carousel-arrow slick-prev" onclick="prevSlide()">&#8592;</div>
+            <div class="carousel-arrow slick-next" onclick="nextSlide()">&#8594;</div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <a href="https://www.linkedin.com/in/jovonka-johnson/" class="footer-link">LinkedIn</a>
+                <a href="resume.html" class="footer-link">Resume</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="" alt="Enlarged Image" id="enlargedImg" class="modal-content">
+      </div>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const illustrationGallery = document.querySelector(".illustration-gallery");
+    const drawingGallery = document.querySelector(".drawing-gallery");
+    const illustrationImages = document.querySelectorAll(".illustration-item");
+    const drawingImages = document.querySelectorAll(".drawing-item");
+
+    let illustrationCurrentIndex = 0;
+    let drawingCurrentIndex = 0;
+
+    function updateCarousel(gallery, images, currentIndex) {
+        gallery.style.transform = `translateX(${-currentIndex * 100}%)`;
+    }
+
+    function nextSlide(gallery, images, currentIndex) {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel(gallery, images, currentIndex);
+        return currentIndex;
+    }
+
+    function prevSlide(gallery, images, currentIndex) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel(gallery, images, currentIndex);
+        return currentIndex;
+    }
+
+  // Functions for illustration carousel
+document.querySelector(".illustration-carousel .slick-prev").addEventListener("click", function () {
+    illustrationCurrentIndex = prevSlide(illustrationGallery, illustrationImages, illustrationCurrentIndex);
+    updateCarousel(illustrationGallery, illustrationImages, illustrationCurrentIndex);
+});
+
+document.querySelector(".illustration-carousel .slick-next").addEventListener("click", function () {
+    illustrationCurrentIndex = nextSlide(illustrationGallery, illustrationImages, illustrationCurrentIndex);
+    updateCarousel(illustrationGallery, illustrationImages, illustrationCurrentIndex);
+});
+
+// Functions for drawing carousel
+document.querySelector(".drawing-carousel .slick-prev").addEventListener("click", function () {
+    drawingCurrentIndex = prevSlide(drawingGallery, drawingImages, drawingCurrentIndex);
+    updateCarousel(drawingGallery, drawingImages, drawingCurrentIndex);
+});
+
+document.querySelector(".drawing-carousel .slick-next").addEventListener("click", function () {
+    drawingCurrentIndex = nextSlide(drawingGallery, drawingImages, drawingCurrentIndex);
+    updateCarousel(drawingGallery, drawingImages, drawingCurrentIndex);
+});
+
+   
+
+});
+// Add this code to your existing script.js file or include it directly in your HTML file
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("enlargedImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    function openModal(src) {
+        modal.style.display = "block";
+        modalImg.src = src;
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Function to handle click on images
+    function handleImageClick(event) {
+        const clickedImage = event.target;
+        const src = clickedImage.getAttribute("src");
+        openModal(src);
+    }
+
+    // Attach click event to all illustration and drawing images
+    const allImages = document.querySelectorAll(".illustration-image");
+    allImages.forEach((image) => {
+        image.addEventListener("click", handleImageClick);
+    });
+
+    // Close modal when close button is clicked
+    closeBtn.onclick = closeModal;
+
+    // Close modal when clicking outside the modal content
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+
+    // Show/hide carousel arrows when hovering over the carousel
+    const illustrationCarousel = document.querySelector(".illustration-carousel");
+    const drawingCarousel = document.querySelector(".drawing-carousel");
+
+    function handleCarouselHover(carousel) {
+        carousel.addEventListener("mouseenter", function () {
+            carousel.querySelector(".carousel-arrow").style.display = "block";
+        });
+
+       
+    }
+
+    handleCarouselHover(illustrationCarousel);
+    handleCarouselHover(drawingCarousel);
+});
+
+    </script>
+    
+    
+</body>
+
+</html>

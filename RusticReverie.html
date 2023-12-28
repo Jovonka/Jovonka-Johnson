@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustic Reverie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ulv1woj.css">
+    <style>
+        body {
+       
+       min-height: 100vh;
+       margin: 0;
+       max-width: 100%;
+       width: 100%;
+       text-align: center;
+   }
+
+   .project-section {
+margin: 6%;
+/* max-width: 696px; */
+/* width: 58%; */
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-content: center;
+}
+
+.image-grid {
+  padding: 10px;
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+   .image-grid img {
+       width: 100%;
+       max-width: 100%;
+       height: auto;
+       border-radius: 8px;
+       overflow: hidden;
+   }
+
+  
+.smaller-inspiration {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+gap: 30px;
+margin-top: 45px;
+background-color: #f8f8f8;
+border-radius: 0;
+overflow: hidden;
+padding: 74px;
+}
+.smaller-inspiration img {
+width: 106%;
+/* max-width: 100%; */
+height: auto;
+border-radius: 8px;
+overflow: hidden;
+}
+h3 {
+padding-top: 10%;
+text-align: center;
+}
+header p {
+text-align: center;
+}
+p {
+margin-right: 10%;
+margin-left: 10%;
+/* padding: 30%; */
+/* width: 39%; */
+text-align: left;
+}
+@media (max-width: 768px) {
+    .smaller-inspiration {
+        grid-template-columns:auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="nav-home"><a href="HomePage.html">Home</a></li>
+            <li><a href="demo-reel-breakdown.html">Demo Reel</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+   
+
+    <div class="project-section">
+        <header>
+            <h1>Rustic Reverie</h1>
+            <p>Rustic Reverie was crafted using Maya for 3D modeling and Python scripting, Substance Painter for texturing, and Arnold for rendering.</p>
+
+        </header>
+        <img src="img/Rustic/H0.jpg" alt="">
+        <h3>Wireframe and Ambient occlusion
+        </h3>
+        <p>The Python script for this project dynamically generates grass blades using cubes and bend deformers. Animated with randomized bending and swaying motions, the grass blades simulate the effects of wind. </p>
+
+        <div class="image-grid">
+        <iframe src="img/Rustic/RusticR.mp4" frameborder="0" allowfullscreen class="process-video" autoplay="false"></iframe>
+
+            </div>
+        <h3>Python scrpiting 
+        </h3>
+      <p>The Python script, while a basic attempt at a wind effect animation for grass blades in Maya, falls short of the desired complexity. Striking a balance between realism and simplicity posed challenges, and the script represents an initial exploration with room for future improvements and refinements.</p>
+        <div class="image-grid">
+        <iframe src="img/Rustic/h2.mp4" frameborder="0" allowfullscreen class="process-video" autoplay="false"></iframe>
+            </div>
+            <h3>Inspiration
+            </h3>
+            <p>Drawn from the enchanting grass style of Studio Ghibli and the artistic aesthetic of games like The Legend of Zelda: Tears of the Kingdom, Rustic Reverie aims to evoke a sense of fantasy and whimsicalness. The goal was to capture the magical essence found in these inspirations and infuse it into the visual narrative of the piece.</p>
+            
+        <div class="smaller-inspiration">
+        <img src="img/Rustic/h4.gif" alt="">
+        <img src="img/Rustic/H8.jpeg" alt="">
+        <img src="img/Rustic/Hut.jpg" alt="">
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <a href="https://www.linkedin.com/in/jovonka-johnson/" class="footer-link">LinkedIn</a>
+                <a href="resume.html" class="footer-link">Resume</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="" alt="Enlarged Image" id="enlargedImg" class="modal-content">
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const modal = document.getElementById("imageModal");
+          const modalImg = document.getElementById("enlargedImg");
+          const closeBtn = document.getElementsByClassName("close")[0];
+      
+          function openModal(src) {
+              modal.style.display = "block";
+              modalImg.src = src;
+          }
+      
+          function closeModal() {
+              modal.style.display = "none";
+          }
+      
+          // Function to handle click on images
+          function handleImageClick(event) {
+              const clickedImage = event.target;
+              const src = clickedImage.getAttribute("src");
+              openModal(src);
+          }
+      
+          // Attach click event to all images in the project section
+          const allImages = document.querySelectorAll(".image-grid img, .smaller-inspiration img");
+          allImages.forEach((image) => {
+              image.addEventListener("click", handleImageClick);
+          });
+      
+          // Close modal when close button is clicked
+          closeBtn.onclick = closeModal;
+      
+          // Close modal when clicking outside the modal content
+          window.onclick = function (event) {
+              if (event.target === modal) {
+                  closeModal();
+              }
+          };
+      });
+      </script>
+      </body>
+
+</html>
