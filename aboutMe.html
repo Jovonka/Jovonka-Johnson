@@ -7,7 +7,23 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://use.typekit.net/ulv1woj.css">
 <style>
-
+  .secret{
+    display: flex;
+    justify-content: center;
+  }
+.bubbles {
+    overflow:visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+footer{
+  margin-top: 40%;
+}
 @media (max-width: 768px) 
         {
   
@@ -16,7 +32,7 @@
       display: none;
     }
     footer{
-      margin-top: 30%;
+      margin-top: 40%;
     }
         }
 
@@ -34,12 +50,13 @@
       <li><a href="Contact.html">Contact</a></li>
     </ul>
   </nav>
-  
   <div id="about-me" class="about-me-section">
-    
+
     <div class="about-me-content">
       <img src="img/PFP.png" alt="Jovonka Johnson" class="about-me-image">
+      
       <div class="about-me-text">
+     
         <h2>Hi! 👋</h2>
         <p>
           I'm Jovonka Johnson, an undergraduate majoring in Design and Human-Computer Interaction at Washington University in St. Louis.
@@ -48,10 +65,14 @@
         <div class="bubbles"></div>
       </div>
     </div>
-    
+   
   </div>
-  
+  <div class="secret">
+
+ <p>enjoy the bubbles :3</p>
+</div> 
   <footer>
+   
     <div class="footer-content">
       <div class="footer-contact">
         <a href="https://www.linkedin.com/in/jovonka-johnson/" class="footer-link">LinkedIn</a>
@@ -62,7 +83,7 @@
   </footer>
   <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img src="" alt="Enlarged Image" id="enlargedImg" class="modal-content">
+    <img src="image" alt="Enlarged Image" id="enlargedImg" class="modal-content">
 </div>
   <script src="script.js"></script>
   <script>

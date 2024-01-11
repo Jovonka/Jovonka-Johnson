@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://use.typekit.net/ulv1woj.css">
   <style>
+    footer{
+      margin-top: 40%;
+    }
     body {
    
    min-height: 100vh;
@@ -45,17 +48,17 @@ justify-content: center;
 
 
 .smaller-inspiration {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
-gap: 30px;
-margin-top: 45px;
-background-color: #f8f8f8;
-border-radius: 0;
-overflow: hidden;
-padding: 52px;
+
+    grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+    gap: 30px;
+    margin-top: 45px;
+    background-color: #f8f8f8;
+    border-radius: 0;
+    overflow: hidden;
+    padding: 52px;
 }
 .smaller-inspiration img {
-width: 106%;
+  width: 65%;
 /* max-width: 100%; */
 height: auto;
 border-radius: 8px;
@@ -86,7 +89,7 @@ text-align: left;
 
   <nav>
     <ul>
-      <li class="nav-home"><a href="in">Home</a></li>
+      <li class="nav-home"><a href="index.html">Home</a></li>
       <li><a href="demo-reel-breakdown.html">Demo Reel</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="aboutMe.html">About Me</a></li>
@@ -95,11 +98,11 @@ text-align: left;
     </ul>
   </nav>
   <div class="smaller-inspiration">
-    <img src="" alt="">
+ 
     <div class="resume" >
-<img src="img/JovonkaJohnsonResume.jpg" alt="">
+<img src="img/2Resume.jpg" alt="">
 </div>
-<img src="" alt=""> 
+
   </div>
 
   <footer>
@@ -113,7 +116,7 @@ text-align: left;
   </footer>
   <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img src="" alt="Enlarged Image" id="enlargedImg" class="modal-content">
+    <img src="image" alt="Enlarged Image" id="enlargedImg" class="modal-content">
 </div>
   <script src="script.js"></script>
   <script>
